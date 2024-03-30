@@ -1,4 +1,5 @@
-# Maintainer: Josef Miegl <josef@miegl.cz>
+# Maintainer: l-koehler <lorenz.koehler@posteo.de>
+# Contributor: Josef Miegl <josef@miegl.cz>
 # Contributor: Gaetan Bisson <bisson@archlinux.org
 # Contributor: Brad Fanella <bradfanella@archlinux.us>
 # Contributor: Daenyth <Daenyth+Arch [at] gmail [dot] com>
@@ -7,15 +8,19 @@
 # Contributor: codyps <archlinux@codyps.com>
 
 pkgname=aircrack-ng-git
-pkgver=20190223.8d5bd358
+pkgver=20240303.6e2871e7
 pkgrel=1
 pkgdesc="WiFi security auditing tools suite"
 url="https://aircrack-ng.org"
 arch=('i686' 'x86_64' 'aarch64' 'armv7h')
 license=('GPL2')
-makedepends=('git' 'python')
+makedepends=('git' 'python' 'python-setuptools')
 depends=('gcc-libs' 'libnl' 'openssl' 'sqlite' 'hwloc' 'pcre' 'libpcap' 'iw' 'net-tools' 'ethtool')
-optdepends=('python: dump-join, airgraph-ng, versuck-ng, airdrop-ng')
+optdepends=('python: needed for dump-join, airgraph-ng, versuck-ng, airdrop-ng'
+            'usbutils: needed for airmon-ng'
+            'pciutils: required for devices with populated PCI(e) bus'
+            'gpsd: allows airodump-ng to log coordinates'
+            'pcre2: SSID filtering with regular expressions in airodump-ng')
 provides=("${pkgname%-git}" 'aircrack-ng-scripts')
 conflicts=("${pkgname%-git}" 'aircrack-ng-scripts')
 replaces=('aircrack-ng-svn' 'aircrack-ng-scripts')
