@@ -1,0 +1,35 @@
+# Maintainer: alphalynx <alphalynx@protonmail.com>
+pkgname=sshp
+pkgver=1.1.3
+pkgrel=1
+pkgdesc='Parallel SSH Executor'
+arch=('x86_64')
+url="https://github.com/bahamas10/$pkgname"
+license=('MIT')
+depends=('glibc')
+makedepends=('git')
+source=("$pkgname::git+https://github.com/bahamas10/sshp.git#tag=v$pkgver")
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "$pkgname"
+	git describe --tags | sed 's/^v//'
+}
+
+build() {
+	cd "$pkgname"
+	make
+}
+
+check() {
+	cd "$pkgname"
+	make -k check
+}
+
+package() {
+	cd "$pkgname"
+	install -Dm755 sshp "$pkgdir/usr/bin/$pkgname"
+	install -Dm644 man/sshp.1 "$pkgdir/usr/share/man/man1/$pkgname.1"
+	install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
