@@ -1,4 +1,4 @@
-# Maintainer: alphalynx <alphalynx@protonmail.com>
+# Maintainer: AlphaLynx <alphalynx@protonmail.com>
 pkgname=sshp
 pkgver=1.1.3
 pkgrel=1
