@@ -12,22 +12,22 @@ source=("$pkgname::git+https://github.com/bahamas10/sshp.git#tag=v$pkgver")
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$pkgname"
+	cd "$srcdir/$pkgname"
 	git describe --tags | sed 's/^v//'
 }
 
 build() {
-	cd "$pkgname"
+	cd "$srcdir/$pkgname"
 	make
 }
 
 check() {
-	cd "$pkgname"
+	cd "$srcdir/$pkgname"
 	make -k check
 }
 
 package() {
-	cd "$pkgname"
+	cd "$srcdir/$pkgname"
 	install -Dm755 sshp "$pkgdir/usr/bin/$pkgname"
 	install -Dm644 man/sshp.1 "$pkgdir/usr/share/man/man1/$pkgname.1"
 	install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
