@@ -31,5 +31,6 @@ package() {
 	install -Dm755 sshp "$pkgdir/usr/bin/$pkgname"
 	install -Dm644 man/sshp.1 "$pkgdir/usr/share/man/man1/$pkgname.1"
 	install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+	install -Dm644 CHANGES.md "pkgdir/usr/share/doc/$pkgname/CHANGES.md"
 	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
