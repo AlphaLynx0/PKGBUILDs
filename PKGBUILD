@@ -1,7 +1,7 @@
 # Maintainer: AlphaLynx <alphalynx@protonmail.com>
 pkgname=sshp
 pkgver=1.1.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Parallel SSH Executor'
 arch=('any')
 url="https://github.com/bahamas10/$pkgname"
