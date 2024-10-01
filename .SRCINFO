@@ -1,9 +1,9 @@
 pkgbase = sshp
 	pkgdesc = Parallel SSH Executor
 	pkgver = 1.1.3
-	pkgrel = 3
+	pkgrel = 4
 	url = https://github.com/bahamas10/sshp
-	arch = any
+	arch = x86_64
 	license = MIT
 	depends = glibc
 	source = sshp-1.1.3.tar.gz::https://github.com/bahamas10/sshp/archive/refs/tags/v1.1.3.tar.gz
