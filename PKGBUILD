@@ -8,7 +8,7 @@ url="https://github.com/bahamas10/$pkgname"
 license=('MIT')
 depends=('glibc')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/bahamas10/$pkgname/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('363111da8c2f738d2d20d9df38bffcbe36dcad4a71a9bcf6cb1c015cc8771d57')
 
 build() {
 	cd "$pkgname-$pkgver"
