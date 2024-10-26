@@ -1,55 +1,72 @@
-# Maintainer: l-koehler <lorenz.koehler@posteo.de>
-# Contributor: Josef Miegl <josef@miegl.cz>
-# Contributor: Gaetan Bisson <bisson@archlinux.org
+# Maintainer: envolution
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Jonathan Steel <jsteel at archlinux.org>
 # Contributor: Brad Fanella <bradfanella@archlinux.us>
 # Contributor: Daenyth <Daenyth+Arch [at] gmail [dot] com>
 # Contributor: Corrado Primier <bardo@aur.archlinux.org>
 # Contributor: ice-man <icemanf@gmail.com>
+# Contributor: l-koehler <lorenz.koehler@posteo.de>
+# Contributor: Josef Miegl <josef@miegl.cz>
+# Contributor: Gaetan Bisson <bisson@archlinux.org
 # Contributor: codyps <archlinux@codyps.com>
 
+#Based on https://gitlab.archlinux.org/archlinux/packaging/packages/aircrack-ng/-/raw/main/PKGBUILD
+
 pkgname=aircrack-ng-git
-pkgver=20240829.8177f63d
+_pkgver=1.7
+pkgver=1.7+r661+g8177f63d
 pkgrel=1
-pkgdesc="WiFi security auditing tools suite"
-url="https://aircrack-ng.org"
+epoch=1
+pkgdesc="Key cracker for the 802.11 WEP and WPA-PSK protocols"
 arch=('i686' 'x86_64' 'aarch64' 'armv7h')
+url="https://www.aircrack-ng.org"
 license=('GPL2')
-makedepends=('git' 'python' 'python-setuptools' 'autoconf')
-depends=('gcc-libs' 'libnl' 'openssl' 'sqlite' 'hwloc' 'pcre' 'libpcap' 'iw' 'net-tools' 'ethtool')
+depends=('glibc' 'gcc-libs' 'openssl' 'sqlite' 'iw' 'net-tools' 'wireless_tools' 'ethtool'
+         'pcre' 'libpcap' libpcap.so 'python' 'zlib' 'libnl' 'hwloc' 'usbutils')
 optdepends=('python: needed for dump-join, airgraph-ng, versuck-ng, airdrop-ng'
             'usbutils: needed for airmon-ng'
             'pciutils: required for devices with populated PCI(e) bus'
             'gpsd: allows airodump-ng to log coordinates'
             'pcre2: SSID filtering with regular expressions in airodump-ng')
-provides=("${pkgname%-git}" 'aircrack-ng-scripts')
-conflicts=("${pkgname%-git}" 'aircrack-ng-scripts')
-replaces=('aircrack-ng-svn' 'aircrack-ng-scripts')
+makedepends=('git' 'python' 'python-setuptools' 'autoconf')
+checkdepends=('cmocka')
+provides=('aircrack-ng-scripts')
+conflicts=('aircrack-ng-scripts')
+replaces=('aircrack-ng-scripts')
 source=("git+https://github.com/aircrack-ng/aircrack-ng.git")
 sha256sums=('SKIP')
 
 pkgver() {
-  cd "${pkgname%-git}"
-  git log -1 --format='%cd.%h' --date=short | tr -d -
+  cd aircrack-ng
+  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-  cd "${pkgname%-git}"
-  autoreconf -f -i
+  cd aircrack-ng
+  autoreconf -fiv
 }
 
 build() {
-  cd "${pkgname%-git}"
-  ./configure --with-experimental --with-ext-scripts --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc --localstatedir=/var
+  cd aircrack-ng
+
+  ./configure \
+    --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --sbindir=/usr/bin \
+    --with-ext-scripts \
+    --with-experimental
+
   make
 }
 
 check() {
-  cd "${pkgname%-git}"
+  cd aircrack-ng
   make check
 }
 
 package() {
-  cd "${pkgname%-git}"
-  make DESTDIR="${pkgdir}" install
+  cd aircrack-ng
+  make DESTDIR="$pkgdir" install
 }
 
+# vim: ts=2 sw=2 et:
