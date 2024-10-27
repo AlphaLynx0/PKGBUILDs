@@ -1,4 +1,4 @@
-#Based on https://gitlab.archlinux.org/archlinux/packaging/packages/aircrack-ng/-/raw/main/PKGBUILD
+# Based on https://gitlab.archlinux.org/archlinux/packaging/packages/aircrack-ng/-/raw/main/PKGBUILD
 # Maintainer: envolution
 # Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Jonathan Steel <jsteel at archlinux.org>
