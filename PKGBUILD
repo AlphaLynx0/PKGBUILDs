@@ -13,7 +13,7 @@
 
 pkgname=aircrack-ng-git
 _pkgver=1.7
-pkgver=${_pkgver//-/}
+pkgver=1.7+r661+g8177f63d
 pkgrel=1
 epoch=1
 pkgdesc="Key cracker for the 802.11 WEP and WPA-PSK protocols"
