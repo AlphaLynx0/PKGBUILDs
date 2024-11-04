@@ -12,8 +12,8 @@
 # Contributor: codyps <archlinux@codyps.com>
 
 pkgname=aircrack-ng-git
-_pkgver=1.7
-pkgver=1.7+r661+g8177f63d
+_pkgver=1.7+r4701+g8177f63da
+pkgver=1.7+r4701+8177f63da
 pkgrel=1
 epoch=1
 pkgdesc="Key cracker for the 802.11 WEP and WPA-PSK protocols"
@@ -39,6 +39,16 @@ pkgver() {
   cd aircrack-ng
   git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
 }
+pkgver() {
+  cd aircrack-ng
+
+  _version=$(git tag --sort=-v:refname --list | grep '^[0-9.]*$' | head -n1)
+  _commits=$(git rev-list --count HEAD)
+  _short_commit_hash=$(git rev-parse --short=9 HEAD)
+  echo "${_version}+r${_commits}+${_short_commit_hash}"
+}
+
+
 
 prepare() {
   cd aircrack-ng
