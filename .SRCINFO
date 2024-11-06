@@ -1,8 +1,7 @@
 pkgbase = aircrack-ng-git
 	pkgdesc = Key cracker for the 802.11 WEP and WPA-PSK protocols
 	pkgver = 1.7+r4701+g8177f63da
-	pkgrel = 1
-	epoch = 1
+	pkgrel = 3
 	url = https://www.aircrack-ng.org
 	arch = i686
 	arch = x86_64
@@ -11,7 +10,6 @@ pkgbase = aircrack-ng-git
 	license = GPL2
 	checkdepends = cmocka
 	makedepends = git
-	makedepends = python
 	makedepends = python-setuptools
 	makedepends = autoconf
 	depends = glibc
