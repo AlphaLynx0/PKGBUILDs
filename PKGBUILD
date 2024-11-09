@@ -16,7 +16,7 @@ source=("git+https://github.com/desultory/ugrd")
 #validpgpkeys=('7751D62F9F9A0454B86871CE64FA651BB8850B48')
 sha256sums=(SKIP) 
 backup=(etc/ugrd/config.toml)
-_name=${_name%-git}
+_name=${pkgname%-git}
 
 pkgver() {
     cd $_name
