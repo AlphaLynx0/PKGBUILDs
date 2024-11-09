@@ -1,0 +1,22 @@
+pkgbase = ugrd-git
+	pkgdesc = Python based initramfs generator with TOML defintions
+	pkgver = 1.27.1.r27.gfff54cb
+	pkgrel = 1
+	url = https://github.com/desultory/ugrd
+	arch = x86_64
+	license = GPL2
+	makedepends = git
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-wheel
+	makedepends = python-setuptools
+	depends = python-zenlib-git
+	depends = python-pycpio-git
+	depends = pax-utils
+	provides = ugrd
+	conflicts = ugrd
+	backup = etc/ugrd/config.toml
+	source = git+https://github.com/desultory/ugrd
+	sha256sums = SKIP
+
+pkgname = ugrd-git
