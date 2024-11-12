@@ -39,7 +39,7 @@ pkgver() {
   _version=$(git tag --sort=-v:refname --list | grep '^[0-9.]*$' | head -n1)
   _commits=$(git rev-list --count HEAD)
   _short_commit_hash=$(git rev-parse --short=9 HEAD)
-  echo "${_version}+r${_commits}+${_short_commit_hash}"
+  echo "${_version}+r${_commits}+g${_short_commit_hash}"
 }
 
 prepare() {
