@@ -1,3 +1,7 @@
 [aircrack-ng-git]
-source="cmd"
-cmd="~/nvchecker/github_version.sh aircrack-ng aircrack-ng"
+source="github-graphql"
+github="aircrack-ng/aircrack-ng"
+use_latest_release=true
+use_commit_number=true
+use_commit_hash=true
+

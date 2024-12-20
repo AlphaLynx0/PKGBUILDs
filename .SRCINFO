@@ -1,6 +1,6 @@
 pkgbase = aircrack-ng-git
 	pkgdesc = Key cracker for the 802.11 WEP and WPA-PSK protocols
-	pkgver = 1.7+r4701+g8177f63da
+	pkgver = 1.7+r4703+g13e5c460f
 	pkgrel = 1
 	url = https://www.aircrack-ng.org
 	arch = i686
