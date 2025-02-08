@@ -17,7 +17,7 @@ pkgrel=1
 pkgdesc="WiFi security auditing tools suite"
 arch=('i686' 'x86_64' 'aarch64' 'armv7h')
 url="https://www.aircrack-ng.org"
-license=('GPL2')
+license=('GPL-2.0-only')
 depends=('glibc' 'gcc-libs' 'openssl' 'sqlite' 'iw' 'net-tools' 'wireless_tools' 'ethtool'
          'pcre' 'libpcap' libpcap.so 'python' 'zlib' 'libnl' 'hwloc' 'usbutils')
 optdepends=('python: needed for dump-join, airgraph-ng, versuck-ng, airdrop-ng'
