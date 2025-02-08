@@ -20,9 +20,7 @@ url="https://www.aircrack-ng.org"
 license=('GPL-2.0-only')
 depends=('glibc' 'gcc-libs' 'openssl' 'sqlite' 'iw' 'net-tools' 'wireless_tools' 'ethtool'
          'pcre' 'libpcap' libpcap.so 'python' 'zlib' 'libnl' 'hwloc' 'usbutils')
-optdepends=('python: needed for dump-join, airgraph-ng, versuck-ng, airdrop-ng'
-            'usbutils: needed for airmon-ng'
-            'pciutils: required for devices with populated PCI(e) bus'
+optdepends=('pciutils: required for devices with populated PCI(e) bus'
             'gpsd: allows airodump-ng to log coordinates'
             'pcre2: SSID filtering with regular expressions in airodump-ng')
 makedepends=('git' 'python-setuptools')
