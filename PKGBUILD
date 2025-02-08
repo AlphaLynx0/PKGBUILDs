@@ -34,40 +34,40 @@ source=("git+https://github.com/aircrack-ng/aircrack-ng.git")
 sha256sums=('SKIP')
 
 pkgver() {
-  cd aircrack-ng
+    cd aircrack-ng
 
-  _version=$(git tag --sort=-v:refname --list | grep '^[0-9.]*$' | head -n1)
-  _commits=$(git rev-list --count HEAD)
-  _short_commit_hash=$(git rev-parse --short=9 HEAD)
-  echo "${_version}+r${_commits}+g${_short_commit_hash}"
+    _version=$(git tag --sort=-v:refname --list | grep '^[0-9.]*$' | head -n1)
+    _commits=$(git rev-list --count HEAD)
+    _short_commit_hash=$(git rev-parse --short=9 HEAD)
+    echo "${_version}+r${_commits}+g${_short_commit_hash}"
 }
 
 prepare() {
-  cd aircrack-ng
-  autoreconf -fiv
+    cd aircrack-ng
+    autoreconf -fiv
 }
 
 build() {
-  cd aircrack-ng
+    cd aircrack-ng
 
-  ./configure \
-    --prefix=/usr \
-    --libexecdir=/usr/lib \
-    --sbindir=/usr/bin \
-    --with-ext-scripts \
-    --with-experimental
+    ./configure \
+      --prefix=/usr \
+      --libexecdir=/usr/lib \
+      --sbindir=/usr/bin \
+      --with-ext-scripts \
+      --with-experimental
 
-  make
+    make
 }
 
 check() {
-  cd aircrack-ng
-  make check
+    cd aircrack-ng
+    make check
 }
 
 package() {
-  cd aircrack-ng
-  make DESTDIR="$pkgdir" install
+    cd aircrack-ng
+    make DESTDIR="$pkgdir" install
 }
 
 # vim: ts=2 sw=2 et:
