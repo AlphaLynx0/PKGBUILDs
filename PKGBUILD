@@ -11,6 +11,7 @@
 # Contributor: Gaetan Bisson <bisson@archlinux.org
 # Contributor: codyps <archlinux@codyps.com>
 
+_pkgname=aircrack-ng
 pkgname=aircrack-ng-git
 pkgver=1.7+r4703+g13e5c460f
 pkgrel=1
@@ -32,7 +33,7 @@ source=("git+https://github.com/aircrack-ng/aircrack-ng.git")
 sha256sums=('SKIP')
 
 pkgver() {
-    cd aircrack-ng
+    cd "$_pkgname"
 
     _release=$(git tag --sort=-v:refname --list | grep '^[0-9.]*$' | head -n1)
     _revision=$(git rev-list --count HEAD)
@@ -41,12 +42,12 @@ pkgver() {
 }
 
 prepare() {
-    cd aircrack-ng
+    cd "$_pkgname"
     autoreconf -fiv
 }
 
 build() {
-    cd aircrack-ng
+    cd "$_pkgname"
 
     ./configure \
       --prefix=/usr \
@@ -59,12 +60,12 @@ build() {
 }
 
 check() {
-    cd aircrack-ng
+    cd "$_pkgname"
     make check
 }
 
 package() {
-    cd aircrack-ng
+    cd "$_pkgname"
     make DESTDIR="$pkgdir" install
 }
 
