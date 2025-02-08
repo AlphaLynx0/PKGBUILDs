@@ -25,7 +25,7 @@ optdepends=('python: needed for dump-join, airgraph-ng, versuck-ng, airdrop-ng'
             'pciutils: required for devices with populated PCI(e) bus'
             'gpsd: allows airodump-ng to log coordinates'
             'pcre2: SSID filtering with regular expressions in airodump-ng')
-makedepends=('git' 'python-setuptools' 'autoconf')
+makedepends=('git' 'python-setuptools')
 checkdepends=('cmocka')
 provides=('aircrack-ng-scripts')
 conflicts=('aircrack-ng-scripts')
