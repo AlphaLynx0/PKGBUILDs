@@ -14,7 +14,7 @@
 pkgname=aircrack-ng-git
 pkgver=1.7+r4703+g13e5c460f
 pkgrel=1
-pkgdesc="Key cracker for the 802.11 WEP and WPA-PSK protocols"
+pkgdesc="WiFi security auditing tools suite"
 arch=('i686' 'x86_64' 'aarch64' 'armv7h')
 url="https://www.aircrack-ng.org"
 license=('GPL2')
