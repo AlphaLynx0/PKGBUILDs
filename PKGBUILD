@@ -70,4 +70,3 @@ package() {
     make DESTDIR="$pkgdir" install
 }
 
-# vim: ts=2 sw=2 et:
