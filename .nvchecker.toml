@@ -1,7 +1,5 @@
 [aircrack-ng-git]
-source="github-graphql"
-github="aircrack-ng/aircrack-ng"
-use_latest_release=true
-use_commit_number=true
-use_commit_hash=true
+source = "git"
+git = "https://github.com/aircrack-ng/aircrack-ng.git"
+use_commit=true
 
