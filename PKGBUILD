@@ -36,10 +36,10 @@ sha256sums=('SKIP')
 pkgver() {
     cd aircrack-ng
 
-    _version=$(git tag --sort=-v:refname --list | grep '^[0-9.]*$' | head -n1)
-    _commits=$(git rev-list --count HEAD)
-    _short_commit_hash=$(git rev-parse --short=9 HEAD)
-    echo "${_version}+r${_commits}+g${_short_commit_hash}"
+    _release=$(git tag --sort=-v:refname --list | grep '^[0-9.]*$' | head -n1)
+    _revision=$(git rev-list --count HEAD)
+    _commit=$(git rev-parse --short=8 HEAD)
+    echo "${_release}.r${_revision}.g${_commit}"
 }
 
 prepare() {
