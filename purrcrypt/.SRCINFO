@@ -1,0 +1,15 @@
+pkgbase = purrcrypt
+	pkgdesc = A fur-ociously secure encryption tool that encodes your secrets as adorable cat and dog sounds, using real elliptic curve cryptography with a playful disguise
+	pkgver = r7.116f168
+	pkgrel = 1
+	url = https://github.com/vxfemboy/purrcrypt.git
+	arch = x86_64
+	license = MIT
+	makedepends = git
+	makedepends = cargo
+	depends = gcc-libs
+	depends = glibc
+	source = git+https://github.com/vxfemboy/purrcrypt.git#commit=116f168
+	sha256sums = SKIP
+
+pkgname = purrcrypt
