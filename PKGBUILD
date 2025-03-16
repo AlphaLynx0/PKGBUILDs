@@ -14,7 +14,7 @@
 _pkgbase=aircrack-ng
 pkgname=aircrack-ng-git
 pkgver=1.7.r4703.g13e5c460
-pkgrel=1
+pkgrel=2
 pkgdesc="WiFi security auditing tools suite"
 arch=('i686' 'x86_64' 'aarch64' 'armv7h' 'pentium4')
 url="https://www.aircrack-ng.org"
