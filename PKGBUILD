@@ -11,7 +11,7 @@
 # Contributor: Gaetan Bisson <bisson@archlinux.org
 # Contributor: codyps <archlinux@codyps.com>
 
-_pkgname=aircrack-ng
+_pkgbase=aircrack-ng
 pkgname=aircrack-ng-git
 pkgver=1.7.r4703.g13e5c460
 pkgrel=1
@@ -29,25 +29,25 @@ checkdepends=('cmocka')
 provides=('aircrack-ng-scripts')
 conflicts=('aircrack-ng-scripts')
 replaces=('aircrack-ng-scripts')
-source=("git+https://github.com/aircrack-ng/aircrack-ng.git")
+source=("git+https://github.com/$_pkgbase/$_pkgbase.git")
 sha256sums=('SKIP')
 
 pkgver() {
-    cd "$_pkgname"
+    cd $_pkgbase
 
     _release=$(git tag --sort=-v:refname --list | grep '^[0-9.]*$' | head -n1)
     _revision=$(git rev-list --count HEAD)
     _commit=$(git rev-parse --short=8 HEAD)
-    echo "${_release}.r${_revision}.g${_commit}"
+    echo "$_release.r$_revision.g$_commit"
 }
 
 prepare() {
-    cd "$_pkgname"
+    cd $_pkgbase
     autoreconf -fiv
 }
 
 build() {
-    cd "$_pkgname"
+    cd $_pkgbase
 
     ./configure \
       --prefix=/usr \
@@ -60,12 +60,12 @@ build() {
 }
 
 check() {
-    cd "$_pkgname"
+    cd $_pkgbase
     make check
 }
 
 package() {
-    cd "$_pkgname"
-    make DESTDIR="$pkgdir" install
+    cd $_pkgbase
+    make DESTDIR=$pkgdir install
 }
 
