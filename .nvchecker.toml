@@ -1,0 +1,4 @@
+[purrcrypt]
+source = "git"
+git = "https://github.com/vxfemboy/purrcrypt.git"
+use_commit=true
