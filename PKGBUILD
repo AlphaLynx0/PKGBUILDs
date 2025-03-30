@@ -2,7 +2,7 @@
 
 pkgname=archivemount-ng
 pkgver=1a
-pkgrel=1
+pkgrel=2
 pkgdesc="FUSE based filesystem for mounting compressed archives (new upstream)"
 arch=('x86_64')
 url="https://git.sr.ht/~nabijaczleweli/$pkgname"

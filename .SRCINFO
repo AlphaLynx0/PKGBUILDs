@@ -1,7 +1,7 @@
 pkgbase = archivemount-ng
 	pkgdesc = FUSE based filesystem for mounting compressed archives (new upstream)
 	pkgver = 1a
-	pkgrel = 1
+	pkgrel = 2
 	url = https://git.sr.ht/~nabijaczleweli/archivemount-ng
 	arch = x86_64
 	license = 0BSD AND LGPL-2.0-or-later
