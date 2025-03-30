@@ -13,6 +13,8 @@ source=("$pkgname-$pkgver.tar.gz::https://git.sr.ht/~nabijaczleweli/$pkgname/arc
         "$pkgname-$pkgver.tar.gz.asc::https://git.sr.ht/~nabijaczleweli/$pkgname/archive/$pkgver.tar.gz.asc")
 sha256sums=('SKIP' 'SKIP')
 validpgpkeys=('7D69474E84028C5CC0C44163BCFD0B018D2658F1')
+provides=(archivemount)
+conflicts=(archivemount)
 
 build() {
     cd "$pkgname-$pkgver"
