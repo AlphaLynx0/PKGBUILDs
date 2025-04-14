@@ -10,6 +10,7 @@ url="https://github.com/desultory/ugrd"
 license=('GPL-2.0-only')
 makedepends=(git python-build python-installer python-wheel python-setuptools)
 depends=(bc python-zenlib-git python-pycpio-git pax-utils)
+optdepends=('python-zstandard: zstd cpio compression')
 provides=(ugrd)
 conflicts=(ugrd)
 source=("git+https://github.com/desultory/ugrd")
