@@ -1,4 +1,6 @@
 # Maintainer: Zen <dev@pyl.onl>
+# Maintainer: AlphaLynx <alphalynx@protonmail.com>
+
 pkgname=ugrd-git
 pkgver=1.27.1.r27.gfff54cb
 pkgrel=2
