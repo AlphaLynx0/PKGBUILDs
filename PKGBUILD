@@ -2,8 +2,8 @@
 # Maintainer: AlphaLynx <alphalynx@protonmail.com>
 
 pkgname=ugrd-git
-pkgver=1.27.1.r27.gfff54cb
-pkgrel=2
+pkgver=2.0.0_pre.r65.ged4518d
+pkgrel=1
 pkgdesc="Python based initramfs generator with TOML defintions"
 arch=('x86_64')
 url="https://github.com/desultory/ugrd"
