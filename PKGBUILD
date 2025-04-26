@@ -13,6 +13,6 @@ b2sums=('9a013896d37babd11bd5ab61b11213cece2e9e168b62a49c3de6af2595cbf29e6c7dda1
 
 package() {
     cd "$pkgname-$pkgver"
-    install -Dm644 pyactivate.sh "$pkgdir/usr/bin/$pkgname.sh"
+    install -Dm644 pyactivate.sh "$pkgdir/usr/share/$pkgname/$pkgname.sh"
     install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/0BSD.txt"
 }
