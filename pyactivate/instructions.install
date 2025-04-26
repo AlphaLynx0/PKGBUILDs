@@ -1,7 +1,7 @@
 post_install() {
     echo ""
     echo "To use pyactivate, add a line that sources it to your shell's rc"
-    echo "For example: echo \"source /usr/bin/pyactivate.sh\" >> ~/.bashrc"
+    echo "For example: echo \"source /usr/share/pyactivate/pyactivate.sh\" >> ~/.bashrc"
     echo ""
 }
 
