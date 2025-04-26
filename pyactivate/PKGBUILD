@@ -1,18 +1,18 @@
 # Maintainer: AlphaLynx <alphalynx@protonmail.com>
 
 pkgname=pyactivate
-pkgver=1.0.2
+pkgver=1.1.1
 pkgrel=1
 pkgdesc="Add a python venv to your environment from within subdirs in a project"
 arch=(any)
 url="https://github.com/AlphaLynx0/$pkgname"
 license=('0BSD')
-depends=(bash)
+install=instructions.install
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-b2sums=('8f4a9d2e459d5ea0d4409daa2afa0f036e386e51df8ee5acaaec43ded02aae15027cb95e6bb36fdb7dca54ef7911d24253aaf995199d93681ffb707763f649d8')
+b2sums=('9a013896d37babd11bd5ab61b11213cece2e9e168b62a49c3de6af2595cbf29e6c7dda18ded1980bccf888aa10759c7b6baa3109bdd624d7fc7b84a90b51be51')
 
 package() {
     cd "$pkgname-$pkgver"
-    install -Dm755 pyactivate.sh "$pkgdir/usr/bin/$pkgname"
+    install -Dm644 pyactivate.sh "$pkgdir/usr/bin/$pkgname.sh"
     install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/0BSD.txt"
 }
