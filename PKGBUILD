@@ -30,5 +30,6 @@ check() {
 package() {
     cd "$pkgname-$pkgver"
     install -Dm644 "LICENSES/0BSD.txt" "$pkgdir/usr/share/licenses/$pkgname/0BSD.txt"
+    install -Dm644 "LICENSES/LGPL-2.0-or-later.txt" "$pkgdir/usr/share/licenses/$pkgname/LGPL-2.0-or-later.txt"
     env PREFIX=/usr make DESTDIR="$pkgdir/" install
 }
