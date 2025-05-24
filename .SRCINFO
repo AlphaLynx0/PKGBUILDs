@@ -9,7 +9,7 @@ pkgbase = purrcrypt
 	makedepends = cargo
 	depends = gcc-libs
 	depends = glibc
-	source = git+https://github.com/vxfemboy/purrcrypt.git#commit=116f168
+	source = purrcrypt-r7.116f168::git+https://github.com/vxfemboy/purrcrypt.git#commit=116f168
 	sha256sums = SKIP
 
 pkgname = purrcrypt
