@@ -33,3 +33,5 @@ package() {
     install -Dm644 "LICENSES/LGPL-2.0-or-later.txt" "$pkgdir/usr/share/licenses/$pkgname/LGPL-2.0-or-later.txt"
     make DESTDIR="$pkgdir/" PREFIX="usr" install
 }
+
+# vim: set ts=4 sw=4 sts=4 et:
