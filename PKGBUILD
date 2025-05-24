@@ -8,7 +8,6 @@ arch=('x86_64')
 url="https://git.sr.ht/~nabijaczleweli/$pkgname"
 license=('0BSD AND LGPL-2.0-or-later')
 depends=('fuse3' 'glibc' 'gcc-libs' 'libarchive')
-makedepends=('git')
 source=("$pkgname-$pkgver.tar.gz::https://git.sr.ht/~nabijaczleweli/$pkgname/archive/$pkgver.tar.gz"
         "$pkgname-$pkgver.tar.gz.asc::https://git.sr.ht/~nabijaczleweli/$pkgname/archive/$pkgver.tar.gz.asc")
 sha256sums=('SKIP' 'SKIP')
@@ -18,7 +17,9 @@ conflicts=(archivemount)
 
 build() {
     cd "$pkgname-$pkgver"
-    make
+    # Override SOURCE_DATE_EPOCH to the last-commit timestamp of archivemount.1.in
+    # since tarball is not git repo
+    VERSION="$pkgver" SOURCE_DATE_EPOCH="1718577439" make
 }
 
 check() {
