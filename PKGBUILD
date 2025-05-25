@@ -38,7 +38,7 @@ check() {
 
 package() {
     cd "$pkgname-$pkgver"
-    install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/purr"
+    install -Dm755 target/release/purr "$pkgdir/usr/bin/purr"
     install -Dm644 "$pkgname-demo.gif" "$pkgdir/usr/share/doc/$pkgname/demo.gif"
     install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
