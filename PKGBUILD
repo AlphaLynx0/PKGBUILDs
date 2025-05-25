@@ -8,7 +8,7 @@ arch=('x86_64')
 url="https://github.com/bahamas10/$pkgname"
 license=('MIT')
 depends=('glibc')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/bahamas10/$pkgname/archive/refs/tags/v$pkgver.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
 sha256sums=('363111da8c2f738d2d20d9df38bffcbe36dcad4a71a9bcf6cb1c015cc8771d57')
 
 build() {
