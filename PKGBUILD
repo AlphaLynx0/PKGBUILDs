@@ -42,3 +42,5 @@ package() {
     install -Dm644 "$pkgname-demo.gif" "$pkgdir/usr/share/doc/$pkgname/demo.gif"
     install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
+
+# vim: set ts=4 sw=4 sts=4 et:
