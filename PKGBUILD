@@ -29,3 +29,5 @@ package() {
     install -Dm644 CHANGES.md "$pkgdir/usr/share/doc/$pkgname/CHANGES.md"
     install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
+
+# vim: set ts=4 sw=4 sts=4 et:
