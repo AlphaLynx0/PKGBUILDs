@@ -13,6 +13,7 @@ sha256sums=('363111da8c2f738d2d20d9df38bffcbe36dcad4a71a9bcf6cb1c015cc8771d57')
 
 build() {
     cd "$pkgname-$pkgver"
+    export CFLAGS+=" -fPIE -Wl,-z,relro,-z,now"
     make
 }
 
