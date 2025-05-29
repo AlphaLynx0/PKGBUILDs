@@ -1,12 +1,13 @@
 pkgbase = pyactivate
 	pkgdesc = Add a python venv to your environment from within subdirs in a project
-	pkgver = 1.1.1
-	pkgrel = 2
+	pkgver = 1.2.0
+	pkgrel = 1
 	url = https://github.com/AlphaLynx0/pyactivate
 	install = instructions.install
 	arch = any
 	license = 0BSD
-	source = pyactivate-1.1.1.tar.gz::https://github.com/AlphaLynx0/pyactivate/archive/refs/tags/v1.1.1.tar.gz
-	b2sums = 9a013896d37babd11bd5ab61b11213cece2e9e168b62a49c3de6af2595cbf29e6c7dda18ded1980bccf888aa10759c7b6baa3109bdd624d7fc7b84a90b51be51
+	depends = bash
+	source = pyactivate-1.2.0.tar.gz::https://github.com/AlphaLynx0/pyactivate/archive/refs/tags/v1.2.0.tar.gz
+	b2sums = 19b931862f3d3a8b597655fd2b3a48e07901cd7843a7afceb4c0eeea1309c9b0cb818136f49cec3235b32e07b7647464d5b87090a5b9374c3350ff3ca92b5369
 
 pkgname = pyactivate
