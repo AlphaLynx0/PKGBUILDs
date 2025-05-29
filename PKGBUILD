@@ -18,9 +18,9 @@ conflicts=(archivemount)
 
 build() {
     cd "$pkgname-$pkgver"
-    # Override SOURCE_DATE_EPOCH to the last-commit timestamp of archivemount.1.in
+    # Override MANUAL_DATE to the last-commit timestamp of archivemount.1.in
     # since tarball is not git repo
-    VERSION="$pkgver" SOURCE_DATE_EPOCH="1718577439" make
+    make MANUAL_DATE="$(date -d @1718577439 '+%B %e, %Y')" VERSION="$pkgver"
 }
 
 check() {
