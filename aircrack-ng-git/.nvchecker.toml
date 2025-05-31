@@ -1,5 +1,0 @@
-[aircrack-ng-git]
-source = "git"
-git = "https://github.com/aircrack-ng/aircrack-ng.git"
-use_commit=true
-

@@ -14,8 +14,8 @@
 _pkgbase=aircrack-ng
 pkgname=aircrack-ng-git
 pkgver=1.7.r4703.g13e5c460
-pkgrel=3
-pkgdesc="WiFi security auditing tools suite"
+pkgrel=4
+pkgdesc="Key cracker for the 802.11 WEP and WPA-PSK protocols"
 arch=('i686' 'x86_64' 'aarch64' 'armv7h' 'pentium4')
 url="https://www.aircrack-ng.org"
 license=('GPL-2.0-only')
@@ -69,3 +69,4 @@ package() {
     make DESTDIR=$pkgdir install
 }
 
+# vim: set ts=4 sw=4 sts=4 et:
