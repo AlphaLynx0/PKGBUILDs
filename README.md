@@ -4,7 +4,7 @@ This repository is a collection of PKGBUILDs for Arch Linux. Most of these are p
 
 ## Installation
 
-These packages can be installed with ([these steps](https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages)).
+These packages can be installed with [these steps](https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages).
 
 ## Repository Structure
 
@@ -24,4 +24,4 @@ I do my best to make sure these packages comply with all [Arch Packaging Guideli
 
 ## Licence
 
-Per [Arch Linux RFC 40](https://rfc.archlinux.page/0040-license-package-sources/), most of these packages are licensed under the BSD Zero Clause License. If a particular package is under this license it will have a copy of the LICENSE file with the 0BSD text in the package directory. If the package does not have this text, it is not under the 0BSD license.
+Per [Arch Linux RFC 40](https://rfc.archlinux.page/0040-license-package-sources/), most of these packages are licensed under the BSD Zero Clause License. Packages that are covered by this license include a LICENSE file containing the full 0BSD text in its directory.
