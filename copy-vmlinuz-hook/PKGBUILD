@@ -1,0 +1,25 @@
+# Maintainer: AlphaLynx <alphalynx@protonmail.com>
+
+pkgname=copy-vmlinuz-hook
+pkgver=1.0
+pkgrel=1
+pkgdesc="Pacman hook to copy new vmlinuz linux image to EFI partition"
+arch=('any')
+license=('MIT')
+depends=('sh')
+source=(
+    'copy-vmlinuz.sh'
+    '01-copy-vmlinuz.hook'
+    'LICENSE'
+)
+b2sums=('131be5418c0b7407fecba27871561901655764f014192745750f556df2327157ef9eb720d835d8b44f809a0d554f9bf55b12db54c5712232a326d0b50121fa84'
+        '6309b787d39d17605203fa1fcdceea60496727a973f2872b4b4a81aeef3bc39b62d827eacea8b81114ed4259800bc775b0a840f3d3b0fe7e8b7bf55945410493'
+        '7dc147b387384e1033f70ffc0082ae27466e0c7a1e57ed0fad13c9c68237b49e44667623b1bbd9e0957ab6478e9b31a41c4b5d8034f248d470cde90bca1faf8b')
+
+package() {
+    install -Dm755 copy-vmlinuz.sh "$pkgdir/usr/bin/copy-vmlinuz.sh"
+    install -Dm644 01-copy-vmlinuz.hook "$pkgdir/usr/share/libalpm/hooks/01-copy-vmlinuz.hook"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+# vim: set ts=4 sw=4 sts=4 et:
