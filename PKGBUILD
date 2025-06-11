@@ -1,4 +1,6 @@
-#Maintainer: max-k <max-k AT post DOT com>
+# Maintainer: AlphaLynx <alphalynx@protonmail.com>
+# Contributor: max-k <max-k AT post DOT com>
+
 pkgname=openvpn-update-systemd-resolved
 pkgver=1.3.0
 pkgrel=4
