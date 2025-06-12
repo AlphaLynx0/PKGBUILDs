@@ -4,7 +4,7 @@
 pkgname=openvpn-update-systemd-resolved
 _pkgname=update-systemd-resolved
 pkgver=2.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Helper script designed to integrate OpenVPN with systemd-resolved via DBus"
 arch=('any')
 url="https://github.com/jonathanio/$_pkgname"
