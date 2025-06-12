@@ -28,7 +28,7 @@ package() {
 
     cd "$_pkgname-$pkgver"
     install -Dm755 "$_pkgname" "$pkgdir/usr/bin/$_pkgname"
-    install -Dm644 "$_pkgname.conf" "$pkgdir/usr/share/doc/openvpn/$_pkgname"
+    install -Dm644 "$_pkgname.conf" "$pkgdir/usr/share/doc/openvpn/$_pkgname.conf"
 }
 
 # vim: set ts=4 sw=4 sts=4 et:
