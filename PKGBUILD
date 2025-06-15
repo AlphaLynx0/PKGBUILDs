@@ -2,7 +2,7 @@
 
 pkgname=purrcrypt
 pkgver=r7.116f168
-pkgrel=3
+pkgrel=4
 pkgdesc='A fur-ociously secure encryption tool that encodes your secrets as adorable cat and dog sounds, using real elliptic curve cryptography with a playful disguise'
 arch=('x86_64')
 url="https://github.com/vxfemboy/$pkgname"
