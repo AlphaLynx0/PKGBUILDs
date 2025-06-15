@@ -2,7 +2,7 @@
 
 pkgname=sshp
 pkgver=1.1.3
-pkgrel=9
+pkgrel=10
 pkgdesc='Parallel SSH Executor'
 arch=('x86_64')
 url="https://github.com/bahamas10/$pkgname"
