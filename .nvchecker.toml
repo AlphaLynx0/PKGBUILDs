@@ -1,0 +1,17 @@
+[purrcrypt]
+source     = "cmd"
+cmd        = """
+  bash -lc '
+    # make a throw-away bare clone so we can count commits
+    tmp=$(mktemp -d)
+    git clone --quiet --bare https://github.com/vxfemboy/purrcrypt.git "$tmp"
+
+    # count commits, then get 7-char short-hash
+    count=$(git --git-dir="$tmp" rev-list --count HEAD)
+    short=$(git --git-dir="$tmp" rev-parse --short=7 HEAD)
+
+    # print in r{count}.{commit} format
+    printf "r%s.%s\n" "$count" "$short"
+    rm -rf "$tmp"
+  '
+"""
