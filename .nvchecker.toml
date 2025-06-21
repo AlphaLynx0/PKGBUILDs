@@ -1,0 +1,5 @@
+[sshp]
+source = "github"
+github = "bahamas10/sshp"
+use_max_tag = true
+prefix = "v"
