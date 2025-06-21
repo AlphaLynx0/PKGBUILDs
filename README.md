@@ -14,7 +14,7 @@ Each package is located in its own subdirectory within this repository. For exam
 
 This repository uses Git subtrees to store external repositories into the package subdirectories.
 
-Subtrees are added to this repo with: `git subtree add --prefix=<package> https://aur.archlinux.org/<package>.git master`
+Subtrees are added to this repo with: `git subtree add --prefix=<package> https://aur.archlinux.org/<package>.git master --squash`
 
 Changes are pulled into this repo with: `git subtree pull --prefix=<package> https://aur.archlinux.org/<package>.git master`
 
@@ -24,4 +24,4 @@ I make sure the packages I maintain or co-maintain on the AUR comply with the [A
 
 ## Licence
 
-Per [Arch Linux RFC 40](https://rfc.archlinux.page/0040-license-package-sources/), most packages are licensed under the BSD Zero Clause License, with a LICENSE file containing the full 0BSD text in the package's directory.
+Per [Arch Linux RFC 40](https://rfc.archlinux.page/0040-license-package-sources/), most packages are licensed under the BSD Zero Clause License, with a LICENSE file containing the full 0BSD text in the package's directory. If a package directory does not contain that LICENSE file, it is not under the terms of this license.
