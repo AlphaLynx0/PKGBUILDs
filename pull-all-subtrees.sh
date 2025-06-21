@@ -4,6 +4,7 @@ set -euo pipefail
 subtrees=(
     aircrack-ng-git
     archivemount-ng
+    opencommit
     openvpn-update-systemd-resolved
     purrcrypt
     pyactivate
