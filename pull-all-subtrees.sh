@@ -15,5 +15,5 @@ subtrees=(
 
 for pkg in "${subtrees[@]}"; do
     echo "Pulling subtree '$pkg'..."
-    git subtree pull --prefix="$pkg" "https://aur.archlinux.org/$pkg.git" master
+    git subtree pull --prefix="$pkg" "https://aur.archlinux.org/$pkg.git" master --squash
 done
