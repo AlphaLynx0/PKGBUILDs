@@ -2,14 +2,20 @@
 set -euo pipefail
 
 subtrees=(
+    aicommits
     aircrack-ng-git
     archivemount-ng
+    box
+    license
     opencommit
     openvpn-update-systemd-resolved
     purrcrypt
     pyactivate
+    python-pycpio
+    python-zenlib
     sshp
     sshp-git
+    ugrd
     ugrd-git
 )
 
