@@ -17,6 +17,7 @@ subtrees=(
     sshp-git
     ugrd
     ugrd-git
+    wootility-appimage
 )
 
 for pkg in "${subtrees[@]}"; do
