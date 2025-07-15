@@ -3,10 +3,10 @@
 pkgname=kiro-bin
 _name="${pkgname%-bin}"
 pkgver=0.1.0
-pkgrel=1
+pkgrel=4
 pkgdesc="The AI IDE for prototype to production"
 arch=('x86_64')
-url="https://kiro.dev/"
+url='https://kiro.dev/'
 license=('LicenseRef-AWS-IPL')
 depends=(
     'alsa-lib'
@@ -42,27 +42,39 @@ options=(!strip)
 source=(
     "$_name-202507140012.tar.gz::https://prod.download.desktop.kiro.dev/releases/202507140012--distro-linux-x64-tar-gz/202507140012-distro-linux-x64.tar.gz"
     "$_name.desktop"
+    "$_name-url-handler.desktop"
+    "$_name-workspace.xml"
 )
 b2sums=('39a2b0fb091734fda20e8bbcaa8eb2dbf1a3cf95cdd0dcd06bf9137a2e203a5d1246a409a4a21fb04023d2696f2acda648d2e49c2a730d5cdc86819429734643'
-        'e1c5ba95a32cc5f980e583f3ae6d94ed9418069409c6696d4e56088404a9ce83efc0833106b625a93d387fc0ffb1b4174525bb4dfb8a966f510f0389b821f756')
+        '0bf88c623f3267df4be7e1d7ae7cea6bae047540c62798e8f5df0b1c9864cd8b66d2346d7bba5fbac58812f57af36f38aab067e76a062c478c1ed8a782dbe770'
+        '17637128fa2beb0afb039eb3f10cbbd1558f91d839313e12949588c47bc8dc0899ba70e3915d15589149efe65d086934f93bb1ec0dada613b3a30179b74cc751'
+        'bf76f34c64e272831da98a3642f827b159582fafb3918db9f7334ed7ed9eace747148d6f0f863d2a5f1e751b7d43f109e35a8ac7ee1985c09d7ea90b73a40455')
 
 package() {
-    install -d "$pkgdir/opt/Kiro"
-    cp -r "$srcdir/Kiro/"* "$pkgdir/opt/Kiro"
+    mkdir -p "$pkgdir/opt/Kiro"
+    cp -r Kiro/* "$pkgdir/opt/Kiro"
 
-    install -d "$pkgdir/usr/bin"
-    ln -s "/opt/Kiro/bin/$_name" "$pkgdir/usr/bin/$_name"
+    mkdir -p "$pkgdir/usr/bin"
+    ln -s /opt/Kiro/bin/$_name "$pkgdir/usr/bin/$_name"
 
-    install -Dm644 "$srcdir/Kiro/resources/app/LICENSE.txt" \
-        "$pkgdir/usr/share/licenses/$_name/LICENSE.txt"
-    install -Dm644 "$srcdir/$_name.desktop" \
-        "$pkgdir/usr/share/applications/Kiro.desktop"
-    install -Dm644 "$srcdir/Kiro/resources/app/resources/linux/code.png" \
-        "$pkgdir/usr/share/pixmaps/$_name.svg"
-    install -Dm644 "$srcdir/Kiro/resources/completions/bash/$_name" \
+    mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+    ln -s /opt/Kiro/resources/app/LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE.txt"
+
+    mkdir -p "$pkgdir/usr/share/pixmaps"
+    ln -s /opt/Kiro/resources/app/resources/linux/code.png "$pkgdir/usr/share/pixmaps/$_name.png"
+
+    mkdir -p "$pkgdir/usr/share/bash-completion/completions"
+    mkdir -p "$pkgdir/usr/share/zsh/site-functions"
+
+    ln -s /opt/Kiro/resources/completions/bash/$_name \
         "$pkgdir/usr/share/bash-completion/completions/$_name"
-    install -Dm644 "$srcdir/Kiro/resources/completions/zsh/_$_name" \
+    ln -s /opt/Kiro/resources/completions/zsh/_$_name \
         "$pkgdir/usr/share/zsh/site-functions/_$_name"
+
+    install -Dm644 $_name.desktop "$pkgdir/usr/share/applications/$_name.desktop"
+    install -Dm644 $_name-url-handler.desktop \
+        "$pkgdir/usr/share/applications/$_name-url-handler.desktop"
+    install -Dm644 $_name-workspace.xml "$pkgdir/usr/share/mime/packages/$_name-workspace.xml"
 }
 
 # vim: set ts=4 sw=4 sts=4 et:
