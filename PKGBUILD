@@ -1,10 +1,10 @@
-# Maintainer: AlphaLynx <alphalynx@protonmail.com>
+# Maintainer: AlphaLynx <AlphaLynx at protonmail dot com>
 
 pkgname=kiro-bin
 _name="${pkgname%-bin}"
 pkgver=0.1.0
 pkgrel=6
-pkgdesc="The AI IDE for prototype to production"
+pkgdesc='The AI IDE for prototype to production'
 arch=('x86_64')
 url='https://kiro.dev/'
 license=('LicenseRef-AWS-IPL')
@@ -76,5 +76,3 @@ package() {
         "$pkgdir/usr/share/applications/$_name-url-handler.desktop"
     install -Dm644 $_name-workspace.xml "$pkgdir/usr/share/mime/packages/$_name-workspace.xml"
 }
-
-# vim: set ts=4 sw=4 sts=4 et:
