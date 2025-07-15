@@ -2,7 +2,7 @@
 Name=Kiro - URL Handler
 Comment=The AI IDE for prototype to production.
 GenericName=Kiro
-Exec=/usr/share/kiro --open-url %U
+Exec=/usr/bin/kiro --open-url %U
 Icon=kiro
 Type=Application
 NoDisplay=true
