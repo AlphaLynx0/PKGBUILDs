@@ -6,6 +6,7 @@ subtrees=(
     aircrack-ng-git
     archivemount-ng
     box
+    kiro-bin
     license
     opencommit
     openvpn-update-systemd-resolved
