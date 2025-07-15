@@ -2,7 +2,7 @@
 Name=Kiro
 Comment=The AI IDE for prototype to production.
 GenericName=Text Editor
-Exec=/usr/share/kiro %F
+Exec=/usr/bin/kiro %F
 Icon=kiro
 Type=Application
 StartupNotify=false
@@ -23,6 +23,6 @@ Name[ko]=새 빈 창
 Name[ru]=Новое пустое окно
 Name[zh_CN]=新建空窗口
 Name[zh_TW]=開新空視窗
-Exec=/usr/share/kiro --new-window %F
+Exec=/usr/bin/kiro --new-window %F
 Icon=kiro
 
