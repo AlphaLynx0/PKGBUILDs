@@ -7,6 +7,11 @@ pkgrel=6
 pkgdesc='The AI IDE for prototype to production'
 arch=('x86_64')
 url='https://kiro.dev/'
+# By downloading and using Kiro, you agree to the following:
+#   AWS Customer Agreement: https://aws.amazon.com/agreement/
+#   AWS Intellectual Property License: https://aws.amazon.com/legal/aws-ip-license-terms/
+#   Service Terms: https://aws.amazon.com/service-terms/
+#   Privacy Notice: https://aws.amazon.com/privacy/
 license=('LicenseRef-AWS-IPL')
 depends=(
     'alsa-lib'
