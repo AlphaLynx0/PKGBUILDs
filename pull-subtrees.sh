@@ -21,7 +21,7 @@ subtrees=(
     wootility-appimage
 )
 
-for pkg in "${subtrees[@]}"; do
-    echo "Pulling subtree '$pkg'..."
-    git subtree pull --prefix="$pkg" "https://aur.archlinux.org/$pkg.git" master --squash
+for pkgbase in "${subtrees[@]}"; do
+    GIT_EDITOR=true git subtree pull --prefix=$pkgbase https://aur.archlinux.org/$pkgbase.git master --squash
+    sleep 0.25
 done
