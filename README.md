@@ -20,7 +20,7 @@ Changes are pulled into this repo with: `git subtree pull --prefix=<package> htt
 
 ## Checking for New Versions
 
-To check all of the applicable packages for new versions: `cat version-check | xargs pkgctl version check`
+To check all of the applicable packages for new versions: `cat version-check | xargs pkgctl version check -v`
 
 ## Contributing
 
