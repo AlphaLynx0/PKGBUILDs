@@ -28,4 +28,6 @@ I try my best to always follow all of the [Arch package guidelines](https://wiki
 
 ## Licence
 
-All package additions and edits authored by me are licensed under the Zero-Clause BSD license. To check if a change is authored by me, refer to the corresponding AUR repository.
+Package sources I have created and my contributions to existing packages are licensed under the Zero-Clause BSD License (0BSD). This covers only changes I've made, **not** existing work by other contributors, and applies only to packaging files (PKGBUILD, patches, etc.), **not** the upstream software being packaged.
+
+Due to commit squashing, check the original AUR repository for each package to see what changes are actually mine.
