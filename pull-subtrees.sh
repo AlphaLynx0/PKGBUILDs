@@ -20,6 +20,7 @@ subtrees=(
     sshp-git
     ugrd
     ugrd-git
+    vet
     wootility-appimage
 )
 
