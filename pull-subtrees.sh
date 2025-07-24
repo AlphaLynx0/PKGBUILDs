@@ -5,6 +5,7 @@ subtrees=(
     aicommits
     aircrack-ng-git
     archivemount-ng
+    archivemount-ng-git
     box
     kiro-bin
     license
