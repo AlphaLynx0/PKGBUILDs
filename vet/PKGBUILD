@@ -1,11 +1,11 @@
 # Maintainer: AlphaLynx <AlphaLynx at protonmail dot com>
 
 pkgname=vet
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
-pkgdesc='A command-line tool that acts as a safety net for the risky curl | bash pattern'
+pkgdesc='A command-line tool that acts as a safety net for the risky curl pipe to bash pattern'
 arch=('any')
-url="https://github.com/vet-run/$pkgname"
+url="https://getvet.sh/"
 license=('MIT')
 depends=('bash' 'coreutils' 'curl' 'diffutils' 'less')
 checkdepends=('bats' 'bats-assert' 'bats-support')
@@ -13,13 +13,15 @@ optdepends=(
     'bat: syntax-highlighting pager for script review'
     'shellcheck: for linting downloaded scripts'
 )
-source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-b2sums=('0d1119c2dae24c86adfc0034e527ef2eb811282a76af7c84254107643a4477e69f0d1de83746aa9427ef122546397532f26c1b39b692cd935ed881f75fda3556')
+source=(
+    "$pkgname-$pkgver.tar.gz::https://github.com/vet-run/vet/archive/refs/tags/v$pkgver.tar.gz"
+)
+b2sums=('5c2a711f4744915053714cd941b82cfd94efcf0363d029a067b267f8254dc0423cfbd73ec742b1ca76889f70f21852dc42116182433d709bacd723b2aaaed1c1')
 
 check() {
     cd $pkgname-$pkgver
 
-    # Link system bats helpers since git submodules aren't in release tarball
+    # Use system bats helpers (normally git submodules, not present in release tarball)
     rm -rf tests/helpers
     mkdir -p tests/helpers
     ln -sf /usr/lib/bats/bats-assert tests/helpers/bats-assert
