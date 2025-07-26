@@ -21,6 +21,7 @@ subtrees=(
     ugrd
     ugrd-git
     vet
+    vet-git
     wootility-appimage
 )
 
