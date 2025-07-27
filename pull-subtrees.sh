@@ -22,7 +22,7 @@ subtrees=(
     ugrd-git
     vet
     vet-git
-    wootility-appimage
+    wootility
 )
 
 for pkgbase in "${subtrees[@]}"; do
