@@ -6,7 +6,6 @@ license
 opencommit
 openvpn-update-systemd-resolved
 purrcrypt
-pyactivate
 python-pycpio
 python-zenlib
 sshp

@@ -12,8 +12,6 @@ subtrees=(
     opencommit
     openvpn-update-systemd-resolved
     purrcrypt
-    pyactivate
-    pyactivate-git
     python-pycpio
     python-zenlib
     sshp
