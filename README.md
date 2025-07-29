@@ -14,13 +14,22 @@ Each package is located in its own subdirectory within this repository. For exam
 
 This repository uses Git subtrees to store external repositories into the package subdirectories.
 
-Subtrees are added to this repo with: `git subtree add --prefix=$pkgbase https://aur.archlinux.org/$pkgbase.git master --squash`
+Subtrees are added to this repo with: 
+```
+git subtree add --prefix=$pkgbase https://aur.archlinux.org/$pkgbase.git master --squash
+```
 
-Changes are pulled into this repo with: `GIT_EDITOR=true git subtree pull --prefix=$pkgbase https://aur.archlinux.org/$pkgbase.git master --squash` (via [pull-subtrees.sh](https://github.com/AlphaLynx0/PKGBUILDs/blob/master/pull-subtrees.sh))
+Changes are pulled into this repo with [pull-subtrees.sh](https://github.com/AlphaLynx0/PKGBUILDs/blob/master/pull-subtrees.sh), or this command: 
+```bash
+GIT_EDITOR=true git subtree pull --prefix=$pkgbase https://aur.archlinux.org/$pkgbase.git master --squash
+```
 
 ## Checking for New Versions
 
-To check all of the applicable packages for new versions: `cat version-check | xargs pkgctl version check -v`
+To check all of the applicable packages for new versions:
+```bash
+cat version-check | xargs pkgctl version check -v
+```
 
 ## Contributing
 
