@@ -2,6 +2,7 @@
 set -euo pipefail
 
 subtrees=(
+    adguardhome-bin
     aicommits
     aircrack-ng-git
     archivemount-ng
