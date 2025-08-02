@@ -14,6 +14,7 @@ subtrees=(
     openvpn-update-systemd-resolved
     proton-mail-bin
     purrcrypt
+    python-borgstore
     python-pycpio
     python-zenlib
     sshp
