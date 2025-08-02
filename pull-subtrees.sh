@@ -12,6 +12,7 @@ subtrees=(
     license
     opencommit
     openvpn-update-systemd-resolved
+    proton-authenticator-bin
     proton-mail-bin
     purrcrypt
     python-borgstore
