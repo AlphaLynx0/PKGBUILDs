@@ -12,6 +12,7 @@ subtrees=(
     license
     opencommit
     openvpn-update-systemd-resolved
+    proton-mail-bin
     purrcrypt
     python-pycpio
     python-zenlib
