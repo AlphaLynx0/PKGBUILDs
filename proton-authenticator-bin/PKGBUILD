@@ -3,7 +3,7 @@
 pkgname=proton-authenticator-bin
 _name=${pkgname%-bin}
 pkgver=1.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='An open source and end-to-end encrypted 2FA app. Securely sync and backup your 2FA codes easily.'
 arch=('x86_64')
 url='https://proton.me/authenticator'
@@ -24,8 +24,13 @@ makedepends=('libarchive')
 provides=("$_name")
 conflicts=("$_name")
 source=("https://proton.me/download/authenticator/linux/ProtonAuthenticator_${pkgver}_amd64.deb")
+sha512sums=('d384ba2c16a342d2acb4a35c654d76123c476289ca41a033c863edd6865efca4140491de3231ac31549e3148f964d9c389fd967ef91b4896e74529f9f494b6e6')
 b2sums=('424e7cf4f8283414d7c7f9b5b4cef0f1ec20eecbacb7d914d155e3a38d82121c8e6c72595d19e676d271962fd13a0992ea5218bfc6082dda896fbe4a8f5f4fb3')
 
 package() {
     bsdtar -xvf data.tar.gz -C "$pkgdir/"
+
+    # Fix display issue on Wayland+Nvidia and X11
+    sed -i 's/Exec=proton-authenticator/Exec=env WEBKIT_DISABLE_DMABUF_RENDERER=1 proton-authenticator/' \
+        "$pkgdir/usr/share/applications/Proton Authenticator.desktop"
 }
