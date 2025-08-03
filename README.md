@@ -31,6 +31,8 @@ To check all of the applicable packages for new versions:
 cat version-check | xargs pkgctl version check -v
 ```
 
+If a package is out-of-date, please let me know through the "Flag package out-of-date" action on the AUR package page.
+
 ## Contributing
 
 I try my best to always follow all of the [Arch package guidelines](https://wiki.archlinux.org/title/Arch_package_guidelines). If you think I've missed something, or have suggestions for my packages, feel free to submit a PR, create an issue here, comment on the AUR page, or [email me](mailto:AlphaLynx@protonmail.com).
