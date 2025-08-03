@@ -9,6 +9,7 @@ subtrees=(
     archivemount-ng-git
     box
     kiro-bin
+    kitty-img
     license
     opencommit
     openvpn-update-systemd-resolved
