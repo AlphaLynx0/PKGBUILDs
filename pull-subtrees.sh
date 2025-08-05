@@ -30,5 +30,5 @@ subtrees=(
 
 for pkgbase in "${subtrees[@]}"; do
     GIT_EDITOR=true git subtree pull --prefix=$pkgbase https://aur.archlinux.org/$pkgbase.git master --squash
-    sleep 0.25
+    sleep 0.1
 done
