@@ -2,7 +2,7 @@
 
 pkgname=kiro-bin
 _name="${pkgname%-bin}"
-pkgver=0.2.30
+pkgver=0.2.35
 pkgrel=1
 pkgdesc='The AI IDE for prototype to production'
 arch=('x86_64')
@@ -44,14 +44,14 @@ depends=(
 provides=("$_name")
 conflicts=("$_name")
 options=('!debug' '!strip')
-_timestamp=202508290529
+_timestamp=202509020529
 source=(
     "$_name-$_timestamp.tar.gz::https://prod.download.desktop.kiro.dev/releases/$_timestamp--distro-linux-x64-tar-gz/$_timestamp-distro-linux-x64.tar.gz"
     "$_name.desktop"
     "$_name-url-handler.desktop"
     "$_name-workspace.xml"
 )
-b2sums=('20e174865e59770f069111f61bd5b588a1d589656314ed7a1638d09911d6d0357bf2502f1c70b89ec4ee9fb521e7eb185f630483ee3206e0e5e2159f74c508ec'
+b2sums=('fe940b48d6895ff4cc2964f446c37b96449397456d56ee8deac806a743409d3a7f01fb3fcad79a1daf39a03bf8cf215712dce7ed0f13cadc96e329b6f9226ca4'
         'ab6e96fccff12d2d7c94dda4647f9fc1e6b0728ac7dd45edba14e364516ed4ad34f01bb7cc48e139fb817f57c309b8fa230c62c3b399915cc7341c2af039d309'
         'fd694d647fe06c439026f1a570fba288fb51bf41fe76de60af1e911255e4692b5a3cae1a8c279ed77a4990618b957591b79b6f152728374af97bea1189691014'
         'bf76f34c64e272831da98a3642f827b159582fafb3918db9f7334ed7ed9eace747148d6f0f863d2a5f1e751b7d43f109e35a8ac7ee1985c09d7ea90b73a40455')
