@@ -1,4 +1,4 @@
 [kiro-bin]
 source = "jq"
-url = "https://prod.download.desktop.kiro.dev/insider/metadata-linux-x64-insider.json"
+url = "https://prod.download.desktop.kiro.dev/stable/metadata-linux-x64-stable.json"
 filter = ".currentRelease"
