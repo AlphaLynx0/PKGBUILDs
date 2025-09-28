@@ -14,6 +14,7 @@ all_subtrees=(
     license
     opencommit
     openvpn-update-systemd-resolved
+    proton-authenticator
     proton-authenticator-bin
     proton-mail-bin
     purrcrypt
