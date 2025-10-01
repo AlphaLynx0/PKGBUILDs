@@ -4,6 +4,7 @@ set -euo pipefail
 # Define all available subtrees
 all_subtrees=(
     adguardhome-bin
+    adguardhome-git
     aicommits
     aircrack-ng-git
     archivemount-ng
