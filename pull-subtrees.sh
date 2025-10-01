@@ -16,6 +16,7 @@ all_subtrees=(
     openvpn-update-systemd-resolved
     proton-authenticator
     proton-authenticator-bin
+    proton-authenticator-git
     proton-mail
     proton-mail-bin
     purrcrypt
