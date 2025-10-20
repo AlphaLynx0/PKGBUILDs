@@ -10,6 +10,7 @@ all_subtrees=(
     archivemount-ng
     archivemount-ng-git
     box
+    jan-appimage
     kiro-bin
     kitty-img
     license
