@@ -1,7 +1,0 @@
-*
-!.gitignore
-!.SRCINFO
-!LICENSE
-!PKGBUILD
-!01-copy-vmlinuz.hook
-!copy-vmlinuz.sh
