@@ -4,12 +4,12 @@
 
 pkgname=jan-appimage
 pkgver=0.7.2
-pkgrel=1
+pkgrel=2
 pkgdesc='An open source alternative to ChatGPT that runs 100% offline on your computer'
 arch=('x86_64')
 url='https://jan.ai/'
 license=('Apache-2.0')
-makedepends=('minisign')
+makedepends=('jq' 'minisign')
 depends=('fontconfig' 'fribidi' 'fuse2' 'harfbuzz' 'hicolor-icon-theme' 'libx11' 'mesa' 'wayland')
 provides=('jan')
 conflicts=('jan')
