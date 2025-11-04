@@ -33,6 +33,7 @@ all_subtrees=(
     vet
     vet-git
     wootility
+    xpad-dkms-git
 )
 
 show_usage() {
