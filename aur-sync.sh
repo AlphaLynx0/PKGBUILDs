@@ -9,6 +9,7 @@ all_subtrees=(
     aircrack-ng-git
     archivemount-ng
     archivemount-ng-git
+    astroterm-bin
     box
     jan-appimage
     kiro-bin
