@@ -23,6 +23,7 @@ all_subtrees=(
     proton-mail
     proton-mail-bin
     proton-mail-git
+    proton-pass-git
     purrcrypt
     python-borgstore
     python-pycpio
