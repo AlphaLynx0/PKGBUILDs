@@ -29,6 +29,6 @@ I try my best to always follow all of the [Arch package guidelines](https://wiki
 
 ## Licence
 
-Package sources I create and my contributions to existing packages are licensed under the Zero-Clause BSD License (0BSD). To see if a particular package source is under this license, check the package directory for a LICENSE file. Package directories that are missing a LICENSE file are not subject to the terms of this package (likely because I have not yet rewritten the source that came from previous contributors).
+Package sources I create and my contributions to existing packages are licensed under the Zero-Clause BSD License (0BSD). To see if a particular package source is under this license, check the package directory for a LICENSE file. Package directories that are missing a LICENSE file are not subject to the terms of this license (likely because I have not yet rewritten the source that came from previous contributors).
 
 Note: This license covers only changes I've made, **not** work by other contributors, and applies only to packaging files (PKGBUILD, patches, etc.), **not** the upstream software being packaged.
