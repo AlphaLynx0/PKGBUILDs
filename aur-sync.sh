@@ -13,6 +13,7 @@ all_subtrees=(
     box
     jan-appimage
     kiro-bin
+    kiro-cli-bin
     kitty-img
     license
     opencommit
