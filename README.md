@@ -8,21 +8,11 @@ These packages can be installed with [these steps](https://wiki.archlinux.org/ti
 
 ## Repository Structure
 
-Each package is located in its own subdirectory within this repository. For example:
+Each package is located in a subdirectory within this repository. For example:
 - `foo/` – Contains the PKGBUILD and related file(s) for package *foo*.
 - `bar/` – Contains the PKGBUILD and related file(s) for package *bar*.
 
 This repository uses Git subtrees to store external repositories into the package subdirectories.
-
-Subtrees are added to this repo with: 
-```
-git subtree add --prefix=$pkgbase https://aur.archlinux.org/$pkgbase.git master --squash
-```
-
-Changes are pulled into this repo with [pull-subtrees.sh](https://github.com/AlphaLynx0/PKGBUILDs/blob/master/pull-subtrees.sh), or this command: 
-```bash
-GIT_EDITOR=true git subtree pull --prefix=$pkgbase https://aur.archlinux.org/$pkgbase.git master --squash
-```
 
 ## Checking for New Versions
 
@@ -35,10 +25,10 @@ If a package is out-of-date, please let me know through the "Flag package out-of
 
 ## Contributing
 
-I try my best to always follow all of the [Arch package guidelines](https://wiki.archlinux.org/title/Arch_package_guidelines). If you think I've missed something, or have suggestions for my packages, feel free to submit a PR, create an issue here, comment on the AUR page, or [email me](mailto:AlphaLynx@protonmail.com).
+I try my best to always follow all of the [Arch package guidelines](https://wiki.archlinux.org/title/Arch_package_guidelines). If you think I've missed something, or have suggestions for my packages, feel free to submit a PR, create an issue here, comment on the AUR page, or [email me](mailto:alphalynx@alphalynx.dev).
 
 ## Licence
 
-Package sources I have created and my contributions to existing packages are licensed under the Zero-Clause BSD License (0BSD). This covers only changes I've made, **not** existing work by other contributors, and applies only to packaging files (PKGBUILD, patches, etc.), **not** the upstream software being packaged.
+Package sources I create and my contributions to existing packages are licensed under the Zero-Clause BSD License (0BSD). To see if a particular package source is under this license, check the package directory for a LICENSE file. Package directories that are missing a LICENSE file are not subject to the terms of this package (likely because I have not yet rewritten the source that came from previous contributors).
 
-Due to commit squashing, check the original AUR repository for each package to see what changes are actually mine.
+Note: This license covers only changes I've made, **not** work by other contributors, and applies only to packaging files (PKGBUILD, patches, etc.), **not** the upstream software being packaged.
