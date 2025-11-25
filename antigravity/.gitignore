@@ -1,5 +1,8 @@
 *
-!PKGBUILD
-!.SRCINFO
-!antigravity.png
 !.gitignore
+!.SRCINFO
+!PKGBUILD
+!LICENSES/
+!LICENSES/*
+!REUSE.toml
+!*.desktop
