@@ -1,12 +1,11 @@
 [Desktop Entry]
+Type=Application
 Name=Antigravity - URL Handler
-Comment=Experience liftoff
-GenericName=Text Editor
+Comment=Handle antigravity:// URLs
 Exec=/usr/bin/antigravity --open-url %U
 Icon=antigravity
-Type=Application
+Terminal=false
 NoDisplay=true
-StartupNotify=true
-Categories=Utility;TextEditor;Development;IDE;
+Categories=Development;
 MimeType=x-scheme-handler/antigravity;
-Keywords=vscode;
+StartupNotify=true

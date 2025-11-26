@@ -5,14 +5,8 @@ path = [
     "PKGBUILD",
     ".SRCINFO",
     ".gitignore",
-    ".nvchecker.toml"
+    ".nvchecker.toml",
+    "*.desktop",
 ]
 SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
-
-[[annotations]]
-path = [
-    "*.desktop"
-]
-SPDX-FileCopyrightText = "Google"
-SPDX-License-Identifier = "LicenseRef-unknown"
