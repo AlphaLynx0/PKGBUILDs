@@ -7,6 +7,7 @@ all_subtrees=(
     adguardhome-git
     aicommits
     aircrack-ng-git
+    antigravity
     archivemount-ng
     archivemount-ng-git
     astroterm-bin
