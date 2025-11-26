@@ -2,7 +2,8 @@
 !.gitignore
 !.SRCINFO
 !PKGBUILD
+!*.desktop
+!LICENSE
 !LICENSES/
 !LICENSES/*
 !REUSE.toml
-!*.desktop
