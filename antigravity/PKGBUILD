@@ -56,4 +56,10 @@ package() {
     install -dm755 "$pkgdir/usr/share/pixmaps"
     ln -s /opt/Antigravity/resources/app/resources/linux/code.png \
         "$pkgdir/usr/share/pixmaps/$pkgname.png"
+
+    install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
+    ln -s /opt/Antigravity/resources/app/LICENSE.txt \
+        "$pkgdir/usr/share/licenses/$pkgname/LICENSE.txt"
+    ln -s /opt/Antigravity/LICENSES.chromium.html \
+        "$pkgdir/usr/share/licenses/$pkgname/LICENSES.chromium.html"
 }
