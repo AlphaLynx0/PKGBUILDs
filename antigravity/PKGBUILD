@@ -2,11 +2,11 @@
 
 pkgname=antigravity
 pkgver=1.11.5
-pkgrel=1
+pkgrel=2
 pkgdesc='An agentic development platform from Google, evolving the IDE into the agent-first era.'
 arch=('x86_64')
 url='https://antigravity.google/'
-license=('LicenseRef-unknown')
+license=('LicenseRef-Google-Antigravity')
 depends=(
     'alsa-lib'
     'at-spi2-core'

@@ -1,10 +1,10 @@
 pkgbase = antigravity
 	pkgdesc = An agentic development platform from Google, evolving the IDE into the agent-first era.
 	pkgver = 1.11.5
-	pkgrel = 1
+	pkgrel = 2
 	url = https://antigravity.google/
 	arch = x86_64
-	license = LicenseRef-unknown
+	license = LicenseRef-Google-Antigravity
 	depends = alsa-lib
 	depends = at-spi2-core
 	depends = bash
