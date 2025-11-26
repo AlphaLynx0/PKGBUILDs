@@ -5,6 +5,7 @@
 !PKGBUILD
 !*.desktop
 !*.xml
+!Kiro-LICENSE.txt
 !LICENSE
 !LICENSES/
 !LICENSES/*

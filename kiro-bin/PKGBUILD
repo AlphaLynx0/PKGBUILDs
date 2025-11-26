@@ -13,7 +13,7 @@ url='https://kiro.dev/'
 #   AWS Intellectual Property License: https://aws.amazon.com/legal/aws-ip-license-terms/
 #   Service Terms: https://aws.amazon.com/service-terms/
 #   Privacy Notice: https://aws.amazon.com/privacy/
-license=('LicenseRef-AWS-IPL')
+license=('LicenseRef-Kiro')
 makedepends=('openssl')
 depends=(
     'alsa-lib'
@@ -79,8 +79,7 @@ package() {
     install -dm755 "$pkgdir/usr/bin"
     ln -s /opt/Kiro/bin/$_name "$pkgdir/usr/bin/$_name"
 
-    install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
-    ln -s /opt/Kiro/resources/app/LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE.txt"
+    install -Dm644 Kiro-LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE.txt"
 
     install -dm755 "$pkgdir/usr/share/pixmaps"
     ln -s /opt/Kiro/resources/app/resources/linux/code.png "$pkgdir/usr/share/pixmaps/$_name.png"
