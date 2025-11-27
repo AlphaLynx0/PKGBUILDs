@@ -1,11 +1,11 @@
 pkgbase = kiro-bin
 	pkgdesc = The AI IDE for prototype to production
 	pkgver = 0.6.18
-	pkgrel = 2
+	pkgrel = 3
 	epoch = 1
 	url = https://kiro.dev/
 	arch = x86_64
-	license = LicenseRef-AWS-IPL
+	license = LicenseRef-Kiro
 	makedepends = openssl
 	depends = alsa-lib
 	depends = at-spi2-core
@@ -45,11 +45,13 @@ pkgbase = kiro-bin
 	source = kiro.desktop
 	source = kiro-url-handler.desktop
 	source = kiro-workspace.xml
+	source = Kiro-LICENSE.txt
 	b2sums = b5bcc65d905c77108659acee8e8a34123a641ba0e2ddeff7553dc13bca6fe790664fc9f686f3a3430660ab54af777cb23157acfc1230ddd2fa4085e5dcc101d2
 	b2sums = 09676f21f9b2821f7fb789fde98f1825f53d1df64ab74932ec2117f6cf06985bc5795ea7a016d90e9318035b2dd7c2f9706dccf44eb4cd092e4268a5f4760a26
 	b2sums = bd92e5872c50a8b339b702f06bc2eca8b7b176811647ac2641ae95b9b58d880ad383d6ce0c314cd6269937a66922b9bd80f47840872674d2adba2f036269324a
 	b2sums = d7afb1d5c54c8789e21e0f598837af95f52ea6e8f99708d38c7166b926022ce88cfd246b5fc530f5f1dbfbde1b4633658e441af7356cdee289013e363bd7eab8
 	b2sums = 7c4eca51844645ee6e642be3cdeb3120ebd4fe308d7f60236b2118536bf5717aff23bb71a308978e491275cdb2ef2e78a295d1554553add681071b909d72ac6b
 	b2sums = c422bc883f40209fb165740fdf339911de868acc8a72033730ac07e3c5fd76604737b7efe0b4f894b70520dbd214c5504bd34c284e7c1f0a4438f1f35eee0dbb
+	b2sums = 4fee11387ffa92e8fba85ca53dcd51906efb5aa0d581002510a66e63916e439c836539de374db5e5b5a4470a1790b6dc0348e7ceb555a8de4dd5210b6c0f7a01
 
 pkgname = kiro-bin
