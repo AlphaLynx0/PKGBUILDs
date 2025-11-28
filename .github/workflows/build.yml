@@ -1,0 +1,90 @@
+name: Build Changed Packages
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.filter.outputs.packages }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed package directories
+        id: filter
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+            if [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ]; then
+              BASE_SHA="HEAD^"
+            fi
+          fi
+
+          CHANGED_DIRS=$(git diff --name-only "$BASE_SHA" HEAD | \
+            grep -E '^[^/]+/' | \
+            cut -d'/' -f1 | \
+            sort -u | \
+            xargs -I {} sh -c 'test -f {}/PKGBUILD && echo {}' | \
+            jq -R -s -c 'split("\n") | map(select(length > 0))')
+
+          if [ "$CHANGED_DIRS" = "[]" ] || [ -z "$CHANGED_DIRS" ]; then
+            echo "packages=[]" >> $GITHUB_OUTPUT
+          else
+            echo "packages=$CHANGED_DIRS" >> $GITHUB_OUTPUT
+          fi
+
+  build:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.packages != '[]'
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJson(needs.detect-changes.outputs.packages) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup build environment
+        run: |
+          pacman-key --init
+          pacman -Syu --noconfirm --needed base-devel
+
+      - name: Configure makepkg for non-root
+        run: |
+          useradd -m builder
+          echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+          chown -R builder:builder "$GITHUB_WORKSPACE"
+
+      - name: Build package
+        run: |
+          cd "$GITHUB_WORKSPACE/${{ matrix.package }}"
+          sudo -u builder makepkg -sf --noconfirm
+
+      - name: Install and verify package
+        run: |
+          PKGFILE=$(find "$GITHUB_WORKSPACE/${{ matrix.package }}" \
+            -name "*.pkg.tar.zst" -type f | head -n1)
+          if [ -z "$PKGFILE" ]; then
+            echo "Error: No package file found"
+            exit 1
+          fi
+          pacman -U --noconfirm "$PKGFILE"
+
+          cd "$GITHUB_WORKSPACE/${{ matrix.package }}"
+          PKGNAME=$(sudo -u builder bash -c \
+            'source PKGBUILD && echo ${pkgname:-${pkgbase}}')
+
+          if ! pacman -Q "$PKGNAME" &>/dev/null; then
+            echo "Error: Package $PKGNAME not installed"
+            exit 1
+          fi
