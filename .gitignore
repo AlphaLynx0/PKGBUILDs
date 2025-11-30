@@ -1,0 +1,12 @@
+*
+!.gitignore
+!.nvchecker.toml
+!.SRCINFO
+!PKGBUILD
+!*.desktop
+!*.xml
+!Kiro-LICENSE.txt
+!LICENSE
+!LICENSES/
+!LICENSES/*
+!REUSE.toml
