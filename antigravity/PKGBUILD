@@ -2,7 +2,7 @@
 
 pkgname=antigravity
 pkgver=1.11.9
-pkgrel=1
+pkgrel=2
 pkgdesc='An agentic development platform from Google, evolving the IDE into the agent-first era.'
 arch=('x86_64')
 url='https://antigravity.google/'
@@ -34,6 +34,7 @@ depends=(
     'pango'
     'systemd-libs'
 )
+options=(!strip !debug)
 source=("$pkgname-$pkgver.tar.gz::https://edgedl.me.gvt1.com/edgedl/release2/j0qc3/antigravity/stable/$pkgver-4787439284912128/linux-x64/Antigravity.tar.gz"
         "antigravity.desktop"
         "antigravity-url-handler.desktop")
