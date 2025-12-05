@@ -14,6 +14,8 @@ all_subtrees=(
     box
     jan-appimage
     kiro-bin
+    kiro-ide
+    kiro-cli
     kiro-cli-bin
     kitty-img
     license
