@@ -13,10 +13,8 @@ all_subtrees=(
     astroterm-bin
     box
     jan-appimage
-    kiro-bin
-    kiro-ide
     kiro-cli
-    kiro-cli-bin
+    kiro-ide
     kitty-img
     license
     opencommit

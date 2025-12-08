@@ -4,8 +4,8 @@ archivemount-ng
 astroterm-bin
 box
 jan-appimage
-kiro-bin
-kiro-cli-bin
+kiro-cli
+kiro-ide
 kitty-img
 license
 opencommit
