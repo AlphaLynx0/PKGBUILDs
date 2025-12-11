@@ -14,6 +14,7 @@ depends=(
     'cairo'
     'dbus'
     'expat'
+    'fd'
     'gcc-libs'
     'glib2'
     'glibc'
@@ -32,22 +33,34 @@ depends=(
     'nspr'
     'nss'
     'pango'
+    'ripgrep'
     'systemd-libs'
 )
 options=(!strip !debug)
 source=("$pkgname-$pkgver.tar.gz::https://edgedl.me.gvt1.com/edgedl/release2/j0qc3/antigravity/stable/$pkgver-6639170008514560/linux-x64/Antigravity.tar.gz"
-        "antigravity.desktop"
-        "antigravity-url-handler.desktop")
+        "antigravity.desktop" "antigravity-url-handler.desktop"
+        "https://gitlab.archlinux.org/archlinux/packaging/packages/code/-/raw/main/code.sh")
 b2sums=('ae36bd135c6a125c6169ecc9c894a4c9a9d4c5335bb4879e92355e62edcd7e88e5bf03b63374d7c22371c0cc24640fa37aa3656c4703fa2bb4b19baa7bdec2f9'
         '59dc67f1cb2f06e77aa1e3496ebcdfc7b8182f94b6cec53f727c8644486b5259ac6683cc7db61dfa4ce5d468e96737290256529e44cc171adcd8dc4e106b3dbb'
-        '99042366cd8f3a4da093234903d755106ed895afafbe203c253927322126c70cfe75f28ca0bfb345688478f786f22f33e1e58c5e14479030f9babf32193c9071')
-
+        '99042366cd8f3a4da093234903d755106ed895afafbe203c253927322126c70cfe75f28ca0bfb345688478f786f22f33e1e58c5e14479030f9babf32193c9071'
+        '04759111dcb50b5811a96085fee9384c89a583431a9da510dd06f2675fe80cf7becd5d12bcbdc92c08f16ba6e2093947fc9eb9007827c2e76244cd4be8615946')
+noextract=("$pkgname-$pkgver.tar.gz")
 package() {
-    install -dm755 "$pkgdir/opt/Antigravity"
-    cp -a Antigravity/* "$pkgdir/opt/Antigravity/"
-
-    install -dm755 "$pkgdir/usr/bin"
-    ln -s /opt/Antigravity/bin/$pkgname "$pkgdir/usr/bin/$pkgname"
+    bsdtar -xf "${noextract[0]}" Antigravity/resources/app
+    _electron=electron$(rg -o -r '$1'  '"electron": *"[^0-9]*([0-9]+)' Antigravity/resources/app/package.json)
+    echo $_electron
+    _electron=electron # tmp update
+    depends+=($_electron)
+    _app=/usr/lib/$pkgname
+	sed -e "s|code-flags|${pkgname}-flags|" \
+		-e "s|/usr/lib/code/out/cli.js|${_app}/out/cli.js|" \
+		-e "s|/usr/lib/code/code.mjs|--app=${_app}|" \
+		-e "s|name=electron|name=${_electron}|" code.sh > run.sh
+    install -Dm755 run.sh "${pkgdir}/usr/bin/$pkgname"
+    install -d "$pkgdir/usr/lib"
+    cp -ar Antigravity/resources/app "$pkgdir/usr/lib/$pkgname"
+    ln -svf /usr/bin/rg "${pkgdir}${_app}/node_modules/@vscode/ripgrep/bin/rg"
+    ln -svf /usr/bin/fd "${pkgdir}${_app}/extensions/antigravity/bin/fd"
 
     install -Dm644 $pkgname.desktop \
         "$pkgdir/usr/share/applications/$pkgname.desktop"
@@ -55,12 +68,10 @@ package() {
         "$pkgdir/usr/share/applications/$pkgname-url-handler.desktop"
 
     install -dm755 "$pkgdir/usr/share/pixmaps"
-    ln -s /opt/Antigravity/resources/app/resources/linux/code.png \
+    ln -s "${_app}/resources/app/resources/linux/code.png" \
         "$pkgdir/usr/share/pixmaps/$pkgname.png"
 
     install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
-    ln -s /opt/Antigravity/resources/app/LICENSE.txt \
+    ln -s "${_app}/resources/app/LICENSE.txt" \
         "$pkgdir/usr/share/licenses/$pkgname/LICENSE.txt"
-    ln -s /opt/Antigravity/LICENSES.chromium.html \
-        "$pkgdir/usr/share/licenses/$pkgname/LICENSES.chromium.html"
 }
