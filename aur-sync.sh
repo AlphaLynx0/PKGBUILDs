@@ -17,6 +17,7 @@ all_subtrees=(
     kiro-ide
     kitty-img
     license
+    lzbench
     opencommit
     openvpn-update-systemd-resolved
     proton-authenticator
