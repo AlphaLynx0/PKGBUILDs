@@ -27,8 +27,12 @@ If a package is out-of-date, please let me know through the "Flag package out-of
 
 I try my best to always follow all of the [Arch package guidelines](https://wiki.archlinux.org/title/Arch_package_guidelines). If you think I've missed something, or have suggestions for my packages, feel free to submit a PR, create an issue here, comment on the AUR page, or [email me](mailto:alphalynx@alphalynx.dev).
 
-## Licence
+## License
 
-Package sources I create and my contributions to existing packages are licensed under the Zero-Clause BSD License (0BSD). To see if a particular package source is under this license, check the package directory for a LICENSE file. Package directories that are missing a LICENSE file are not subject to the terms of this license (likely because I have not yet rewritten the source that came from previous contributors).
+Packages in this repository are implementing [Arch Linux RFC 0052](https://rfc.archlinux.page/0052-reuse/) and the [REUSE Specification 3.3](https://reuse.software/spec-3.3/). This is an ongoing effort, and not all packages may fully follow this yet.
 
-Note: This license covers only changes I've made, **not** work by other contributors, and applies only to packaging files (PKGBUILD, patches, etc.), **not** the upstream software being packaged.
+**Package sources** (PKGBUILDs, install scripts, and other files I create) are licensed under the Zero-Clause BSD License (0BSD) with copyright attributed to "Arch Linux contributors". License texts are stored in the `LICENSES/` directory, and licensing information is declared in `REUSE.toml` files.
+
+**Files from upstream projects** (such as .desktop files, patches, or other assets copied from upstream) retain their original upstream license and copyright. These are also declared in the respective `REUSE.toml` files.
+
+**Upstream software** being packaged maintains its own license, which is not affected by the packaging license.
