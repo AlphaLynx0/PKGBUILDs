@@ -18,6 +18,7 @@ all_subtrees=(
     kitty-img
     license
     lzbench
+    lzbench-bin
     opencommit
     openvpn-update-systemd-resolved
     proton-authenticator
