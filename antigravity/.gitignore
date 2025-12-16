@@ -2,8 +2,8 @@
 !.gitignore
 !.SRCINFO
 !PKGBUILD
-!*.desktop
 !LICENSE
 !LICENSES/
 !LICENSES/*
 !REUSE.toml
+!.nvchecker.toml

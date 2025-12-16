@@ -1,0 +1,4 @@
+[antigravity]
+source = "regex"
+url = "https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/dists/antigravity-debian/main/binary-amd64/Packages"
+regex = 'Version: ([\d.]+)-\d+'
