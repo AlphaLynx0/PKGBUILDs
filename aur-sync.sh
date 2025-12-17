@@ -34,6 +34,7 @@ all_subtrees=(
     python-zenlib
     rusticon
     rusticon-bin
+    rusticon-git
     sshp
     sshp-git
     ugrd

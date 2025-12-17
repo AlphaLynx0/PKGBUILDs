@@ -23,6 +23,7 @@ python-pycpio
 python-zenlib
 rusticon
 rusticon-bin
+rusticon-git
 sshp
 ugrd
 vet
