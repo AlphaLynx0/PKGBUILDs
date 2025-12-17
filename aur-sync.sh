@@ -32,6 +32,7 @@ all_subtrees=(
     python-borgstore
     python-pycpio
     python-zenlib
+    rusticon
     sshp
     sshp-git
     ugrd
