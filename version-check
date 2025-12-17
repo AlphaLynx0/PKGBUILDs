@@ -22,6 +22,7 @@ python-borgstore
 python-pycpio
 python-zenlib
 rusticon
+rusticon-bin
 sshp
 ugrd
 vet

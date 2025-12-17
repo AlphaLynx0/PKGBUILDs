@@ -33,6 +33,7 @@ all_subtrees=(
     python-pycpio
     python-zenlib
     rusticon
+    rusticon-bin
     sshp
     sshp-git
     ugrd
